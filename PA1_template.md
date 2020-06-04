@@ -98,12 +98,21 @@ actSum
 ```r
 View(actSum)
 
-#Total number of days
+#Total number of days with non-missing values
 length(actSum$date) ##Extra info
 ```
 
 ```
 ## [1] 53
+```
+
+```r
+#Total number of days
+length(unique(activity$date))
+```
+
+```
+## [1] 61
 ```
 
 ```r
@@ -300,7 +309,7 @@ sum(!is.na(activity$steps)) ##15264 non-NAs
 #length(MeanActInt$interval) ##288 5min intervals
 
 #Total number of days
-#length(actSum$date) ##61 days
+#length(unique(activity$date)) ##61 days
 
 #Repeat for number of days and combine in one data frame
 dat <- data.frame() ##creates an empty data frame

@@ -246,9 +246,12 @@ actSum</code></pre>
 ## # ... with 43 more rows</code></pre>
 <pre class="r"><code>View(actSum)
 
-#Total number of days
+#Total number of days with non-missing values
 length(actSum$date) ##Extra info</code></pre>
 <pre><code>## [1] 53</code></pre>
+<pre class="r"><code>#Total number of days
+length(unique(activity$date))</code></pre>
+<pre><code>## [1] 61</code></pre>
 <pre class="r"><code>#Histogram in ggplot 
 
 ##To get counts for number of steps per day in each bin (default bin = 30; not a barplot)
@@ -367,7 +370,7 @@ length(activity$steps) ##17568 total</code></pre>
 #length(MeanActInt$interval) ##288 5min intervals
 
 #Total number of days
-#length(actSum$date) ##61 days
+#length(unique(activity$date)) ##61 days
 
 #Repeat for number of days and combine in one data frame
 dat &lt;- data.frame() ##creates an empty data frame

@@ -61,8 +61,11 @@ actSum <- activity %>% filter(steps, !is.na(steps)) %>% group_by(date, add=F) %>
 actSum
 View(actSum)
 
-#Total number of days
+#Total number of days with non-missing values
 length(actSum$date) ##Extra info
+
+#Total number of days
+length(unique(activity$date))
 
 #Histogram in ggplot 
 
@@ -182,7 +185,7 @@ sum(!is.na(activity$steps)) ##15264 non-NAs
 #length(MeanActInt$interval) ##288 5min intervals
 
 #Total number of days
-#length(actSum$date) ##61 days
+#length(unique(activity$date)) ##61 days
 
 #Repeat for number of days and combine in one data frame
 dat <- data.frame() ##creates an empty data frame
