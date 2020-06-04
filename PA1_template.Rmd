@@ -20,8 +20,8 @@ analysis
 No further processing done.
 
 ###Code
-```{r Load and Process, echo=T}
-getwd()
+```{r LoadData}
+
 library(tidyverse)
 
 #Read file
@@ -52,7 +52,7 @@ Mean: 9354 mean total steps per day
 Median: 10395 median total steps per day
 
 ###Code
-```{r Steps Per Day, echo=T}
+```{r StepsPerDay}
 
 
 #To get sums by date
@@ -99,7 +99,7 @@ Max steps interval: 835, the 5 minute interval starting at 8:35am
 
 
 ###Code
-```{r Average Daily Activity, echo=T}
+```{r AverageDailyActivity}
 
 #Mean per interval
 MeanActInt <- activity %>% group_by(interval) %>% summarize(StepsPerInt = mean(steps, na.rm=T)) 
@@ -162,7 +162,7 @@ The result of imputation with the mean for each 5min interval is a slightly incr
 
 
 ###Code
-```{r Imputation, echo=T}
+```{r Imputation}
 
 #Calculate and report the total number of missing values in the data set
 
@@ -245,7 +245,7 @@ See time series plot below.
 
 
 ###Code
-```{r Weekday - Weekend Compare, echo=T}
+```{r WeekdayWeekendCompare}
 
 ##Using "final" with imputed values
 library(lubridate)

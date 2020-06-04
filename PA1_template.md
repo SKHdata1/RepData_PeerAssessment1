@@ -22,14 +22,6 @@ No further processing done.
 ###Code
 
 ```r
-getwd()
-```
-
-```
-## [1] "C:/Users/ghasy/OneDrive - Bayer/Personal Data/GitHub/RepData_PeerAssessment1"
-```
-
-```r
 library(tidyverse)
 ```
 
@@ -128,7 +120,7 @@ ggplot(data = actSum, mapping = aes(x = StepsPerDay)) + geom_histogram()
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-![](PA1_template_files/figure-html/Steps Per Day-1.png)<!-- -->
+![](PA1_template_files/figure-html/StepsPerDay-1.png)<!-- -->
 
 ```r
 #Mean total steps per day 
@@ -228,7 +220,7 @@ MaxInt
 ggplot(data = MeanActInt, mapping = aes(x = interval, y = StepsPerInt)) + geom_line()
 ```
 
-![](PA1_template_files/figure-html/Average Daily Activity-1.png)<!-- -->
+![](PA1_template_files/figure-html/AverageDailyActivity-1.png)<!-- -->
 
 
 ## Imputing missing values
@@ -604,4 +596,4 @@ View(MeanActInt2)
 ggplot(data = MeanActInt2, aes(x = interval, y = StepsPerInt)) + facet_wrap(~finalSplit) + geom_line()
 ```
 
-![](PA1_template_files/figure-html/Weekday - Weekend Compare-1.png)<!-- -->
+![](PA1_template_files/figure-html/WeekdayWeekendCompare-1.png)<!-- -->
