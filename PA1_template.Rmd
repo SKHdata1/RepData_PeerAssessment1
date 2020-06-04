@@ -47,9 +47,9 @@ See histogram below.
 2. Calculate and report the mean and median total number of steps taken
 per day
 
-Mean: 9354 mean total steps per day
+Mean: 10766.19 mean total steps per day
 
-Median: 10395 median total steps per day
+Median: 10765 median total steps per day
 
 ###Code
 ```{r StepsPerDay}
@@ -57,7 +57,7 @@ Median: 10395 median total steps per day
 
 #To get sums by date
 
-actSum <- activity %>% group_by(date, add=F) %>% summarize(StepsPerDay = sum(steps, na.rm=TRUE)) 
+actSum <- activity %>% filter(steps, !is.na(steps)) %>% group_by(date, add=F) %>% summarize(StepsPerDay = sum(steps, na.rm=TRUE)) 
 actSum
 View(actSum)
 
@@ -154,11 +154,11 @@ daily number of steps?
 
 See histogram and code below.
 
-Mean with imputation: 10766 mean total steps per day
+Mean with imputation: 10766.19 mean total steps per day
 
-Median with imputation: 10766 median total steps per day
+Median with imputation: 10766.19 median total steps per day
 
-The result of imputation with the mean for each 5min interval is a slightly increased estimate for mean and median and a better alignment of the two values.
+The result of imputation is alignment of the mean with the median.
 
 
 ###Code

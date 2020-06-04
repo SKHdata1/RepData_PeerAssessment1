@@ -65,34 +65,34 @@ See histogram below.
 2. Calculate and report the mean and median total number of steps taken
 per day
 
-Mean: 9354 mean total steps per day
+Mean: 10766.19 mean total steps per day
 
-Median: 10395 median total steps per day
+Median: 10765 median total steps per day
 
 ###Code
 
 ```r
 #To get sums by date
 
-actSum <- activity %>% group_by(date, add=F) %>% summarize(StepsPerDay = sum(steps, na.rm=TRUE)) 
+actSum <- activity %>% filter(steps, !is.na(steps)) %>% group_by(date, add=F) %>% summarize(StepsPerDay = sum(steps, na.rm=TRUE)) 
 actSum
 ```
 
 ```
-## # A tibble: 61 x 2
+## # A tibble: 53 x 2
 ##    date       StepsPerDay
 ##    <fct>            <int>
-##  1 2012-10-01           0
-##  2 2012-10-02         126
-##  3 2012-10-03       11352
-##  4 2012-10-04       12116
-##  5 2012-10-05       13294
-##  6 2012-10-06       15420
-##  7 2012-10-07       11015
-##  8 2012-10-08           0
-##  9 2012-10-09       12811
-## 10 2012-10-10        9900
-## # ... with 51 more rows
+##  1 2012-10-02         126
+##  2 2012-10-03       11352
+##  3 2012-10-04       12116
+##  4 2012-10-05       13294
+##  5 2012-10-06       15420
+##  6 2012-10-07       11015
+##  7 2012-10-09       12811
+##  8 2012-10-10        9900
+##  9 2012-10-11       10304
+## 10 2012-10-12       17382
+## # ... with 43 more rows
 ```
 
 ```r
@@ -103,7 +103,7 @@ length(actSum$date) ##Extra info
 ```
 
 ```
-## [1] 61
+## [1] 53
 ```
 
 ```r
@@ -133,7 +133,7 @@ meanTotal
 ## # A tibble: 1 x 1
 ##   MeanSteps
 ##       <dbl>
-## 1     9354.
+## 1    10766.
 ```
 
 ```r
@@ -146,7 +146,7 @@ medTotal
 ## # A tibble: 1 x 1
 ##   MedianSteps
 ##         <int>
-## 1       10395
+## 1       10765
 ```
 
 
@@ -253,11 +253,11 @@ daily number of steps?
 
 See histogram and code below.
 
-Mean with imputation: 10766 mean total steps per day
+Mean with imputation: 10766.19 mean total steps per day
 
-Median with imputation: 10766 median total steps per day
+Median with imputation: 10766.19 median total steps per day
 
-The result of imputation with the mean for each 5min interval is a slightly increased estimate for mean and median and a better alignment of the two values.
+The result of imputation is alignment of the mean with the median.
 
 
 ###Code
